@@ -24,20 +24,26 @@ void loop() {
 Methods
 -------
 * wavSetup()
+
   Sets up the SPIFFS filesystem + initialises i2s
 
 * wavStartPlaying("/filename.wav")
+  
   Plays the filename from SPIFFs
 
 * wavPlaying()
+  
   Returns true when a file is playing.
 
 * wavStopPlaying()
+  
   Stops playing the current file.
 
 * wavLoop()
+  
   Must be called during loop to make sure the play buffer is kept full.
 
 * showDir()
+  
   Show details about the files stored on SPIFFS
 
