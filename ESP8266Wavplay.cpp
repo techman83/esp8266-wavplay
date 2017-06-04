@@ -18,7 +18,7 @@
   SOFTWARE.
  **************************************************************************/
 
-#include "wavplay.h"
+#include "ESP8266Wavplay.h"
 
 bool ICACHE_FLASH_ATTR i2s_write_lr_nb(int16_t left, int16_t right){
   int sample = right & 0xFFFF;

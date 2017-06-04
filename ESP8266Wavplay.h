@@ -1,4 +1,4 @@
-#ifndef __WAVPLAY_H__
+#ifndef __ESP8266WAVPLAY_H__
 
 #include "Arduino.h"
 #include "i2s.h"
@@ -21,4 +21,4 @@ void showDir();
 #endif
 
 #endif
-#define __WAVPLAY_H__   1
+#define __ESP8266WAVPLAY_H__   1
