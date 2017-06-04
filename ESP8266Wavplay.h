@@ -3,7 +3,7 @@
 #include "Arduino.h"
 #include "i2s.h"
 #include "i2s_reg.h"
-#include "wavspiffs.h"
+#include "ESP8266Wavspiffs.h"
 
 #ifdef __cplusplus
 extern "C" {
