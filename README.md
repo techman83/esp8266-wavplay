@@ -1,3 +1,11 @@
+Read First!
+-----------
+
+You should probably checkout this [library](https://github.com/earlephilhower/ESP8266Audio.git) as it's way more fleshed out and I'll be moving my own projects to it.
+
+ESP8266 WavPlay is a little lighter if your running tight on code space, but it could use some attention in the implementation department (ie. moving it out of the global namespace).
+
+
 ESP8266 WavPlay
 ---------------
 
