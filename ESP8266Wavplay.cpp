@@ -20,10 +20,29 @@
 
 #include "ESP8266Wavplay.h"
 
+uint8_t gainF2P6;
+
+bool setGain(float f){
+ if (f>4.0) f = 4.0; 
+ if (f<0.0) f=0.0; 
+ gainF2P6 = (uint8_t)(f*(1<<6)); 
+ return true;
+}
+
+int16_t Amplify(int16_t s) {
+  int32_t v = (s * gainF2P6)>>6;
+  if (v < -32767) 
+    return -32767;
+  else if (v > 32767) 
+    return 32767;
+  else 
+    return (int16_t)(v&0xffff);
+}
+
 bool ICACHE_FLASH_ATTR i2s_write_lr_nb(int16_t left, int16_t right){
-  int sample = right & 0xFFFF;
+  int sample = Amplify(right) & 0xFFFF;
   sample = sample << 16;
-  sample |= left & 0xFFFF;
+  sample |= Amplify(left) & 0xFFFF;
   return i2s_write_sample_nb(sample);
 }
 
@@ -41,6 +60,7 @@ void wavStopPlaying()
   I2S_WAV.playing = false;
   wavClose(&I2S_WAV.wf);
 }
+
 
 bool wavPlaying()
 {
